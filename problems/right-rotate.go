@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func reversed(numbers []int) []int {
 	for i, j := 0, len(numbers)-1; i < j; i, j = i+1, j-1 {
@@ -9,16 +11,15 @@ func reversed(numbers []int) []int {
 	return numbers
 }
 
-func main() {
-	A := []int{1, 2, 3, 4, 5, 6, 7}
-	B := 3
+func rightRotate() {
+	A := []int{1, 1, 4, 9, 4, 7, 1}
+	B := 9
+	rotations := B % len(A)
+
 	reversedNum := reversed(A)
 
-	first := reversedNum[:B]
-	second := reversedNum[B:]
-
-	firstReverse := reversed(first)
-	secondReverse := reversed(second)
+	firstReverse := reversed(reversedNum[:rotations])
+	secondReverse := reversed(reversedNum[rotations:])
 
 	joined := append(firstReverse, secondReverse...)
 
