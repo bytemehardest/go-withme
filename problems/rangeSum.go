@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func rangedSum() {
 	A := []int{2, 2, 2}
 	B := [][]int{{0, 0}, {1, 2}}
 
