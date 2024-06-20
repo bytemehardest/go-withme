@@ -9,7 +9,7 @@ func main() {
 	B := [][]int{{0, 2}, {2, 4}, {1, 4}}
 
 	prefixSum := make([]int, len(A))
-	evens := []int{len(A)}
+	evens := make([]int, len(B))
 
 	if A[0]%2 == 1 {
 		prefixSum[0] = 0
@@ -26,9 +26,7 @@ func main() {
 	}
 
 	for index, value := range B {
-		fmt.Println(prefixSum)
-		indexToCheck := value[1]
-		evens[index] = prefixSum[indexToCheck]
+		evens[index] = prefixSum[value[1]] - prefixSum[value[0]]
 	}
 
 	fmt.Println(evens)
