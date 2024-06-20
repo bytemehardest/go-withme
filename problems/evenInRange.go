@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-func main() {
-	A := []int{1, 2, 3, 4, 5}
-	B := [][]int{{0, 2}, {2, 4}, {1, 4}}
+func evenInRange() {
+	A := []int{2, 1, 8, 3, 9, 6}
+	B := [][]int{{0, 3}, {3, 5}, {1, 3}, {2, 4}}
 
 	prefixSum := make([]int, len(A))
-	evens := []int{len(A)}
+	evens := make([]int, len(B))
 
 	if A[0]%2 == 1 {
 		prefixSum[0] = 0
@@ -25,10 +25,14 @@ func main() {
 		}
 	}
 
+	fmt.Println(prefixSum)
+
 	for index, value := range B {
-		fmt.Println(prefixSum)
-		indexToCheck := value[1]
-		evens[index] = prefixSum[indexToCheck]
+		if value[0] == 0 {
+			evens[index] = prefixSum[value[1]]
+		} else {
+			evens[index] = prefixSum[value[1]] - prefixSum[value[0]-1]
+		}
 	}
 
 	fmt.Println(evens)
