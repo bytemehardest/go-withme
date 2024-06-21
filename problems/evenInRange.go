@@ -25,8 +25,6 @@ func evenInRange() {
 		}
 	}
 
-	fmt.Println(prefixSum)
-
 	for index, value := range B {
 		if value[0] == 0 {
 			evens[index] = prefixSum[value[1]]
