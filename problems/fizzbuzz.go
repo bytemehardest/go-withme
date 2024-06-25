@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func fizzBuzz() {
 	n := 50
 	resultSlice := make([]string, n)
 
