@@ -6,18 +6,18 @@ import (
 )
 
 func main() {
-	input := 50
-	resultSlice := make([]string, input)
+	n := 50
+	resultSlice := make([]string, n)
 
-	for i := 1; i <= input; i++ {
+	for i := 1; i <= n; i++ {
 		if i%15 == 0 {
-			resultSlice = append(resultSlice, "FizzBuzz")
+			resultSlice[i-1] = "FizzBuzz"
 		} else if i%3 == 0 {
-			resultSlice = append(resultSlice, "Fizz")
+			resultSlice[i-1] = "Fizz"
 		} else if i%5 == 0 {
-			resultSlice = append(resultSlice, "Buzz")
+			resultSlice[i-1] = "Buzz"
 		} else {
-			resultSlice = append(resultSlice, strconv.Itoa(i))
+			resultSlice[i-1] = strconv.Itoa(i)
 		}
 	}
 
